@@ -1,0 +1,5 @@
+data_dir: C:/Kaggle/kaggle-child-mind-institute-detect-sleep-states/data
+processed_dir: C:/Kaggle/kaggle-child-mind-institute-detect-sleep-states/processed_data
+output_dir: C:/Kaggle/kaggle-child-mind-institute-detect-sleep-states/output
+model_dir: C:/Kaggle/kaggle-child-mind-institute-detect-sleep-states/output/train
+sub_dir: ./
