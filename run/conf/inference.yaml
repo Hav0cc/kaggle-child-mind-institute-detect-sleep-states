@@ -54,3 +54,5 @@ features:
   - "enmo"
   - "hour_sin"
   - "hour_cos"
+  - "anglez_diff"
+  - "enmo_diff"
