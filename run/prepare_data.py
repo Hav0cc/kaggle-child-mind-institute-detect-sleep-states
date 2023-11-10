@@ -5,6 +5,7 @@ import hydra
 import numpy as np
 import polars as pl
 from tqdm import tqdm
+import pandas as pd
 
 import sys
 import os
@@ -82,9 +83,19 @@ def add_feature(series_df: pl.DataFrame) -> pl.DataFrame:
             pl.col("step") / pl.count("step"),
             pl.col('anglez_rad').sin().alias('anglez_sin'),
             pl.col('anglez_rad').cos().alias('anglez_cos'),
+            anglez_diff=pl.col('anglez').diff(),
+            enmo_diff=pl.col('enmo').diff(),
+            # pl.col('anglez_diff').fill_null(strategy="zero"),
+            # pl.col('enmo_diff').fill_null(strategy="zero"),
         )
         .select("series_id", *FEATURE_NAMES)
     )
+    
+    series_df = series_df.with_columns(
+        pl.col('anglez_diff').fill_null(strategy="zero"),
+        pl.col('enmo_diff').fill_null(strategy="zero")
+    )
+
     return series_df
 
 
