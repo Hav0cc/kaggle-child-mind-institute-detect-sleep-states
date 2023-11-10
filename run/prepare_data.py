@@ -146,8 +146,8 @@ def main(cfg: PrepareDataConfig):
                     pl.col("enmo"),
                     pl.col("timestamp"),
                     pl.col("anglez_rad"),
-                    pl.col("anglez_diff"),
-                    pl.col("enmo_diff"),
+                    # pl.col("anglez_diff"),
+                    # pl.col("enmo_diff"),
                 ]
             )
             .collect(streaming=True)
