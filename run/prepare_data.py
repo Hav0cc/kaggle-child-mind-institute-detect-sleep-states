@@ -39,8 +39,8 @@ FEATURE_NAMES = [
     "anglez_cos",
     "anglez_diff",
     "enmo_diff",
-    # "anglez_diff_pct",
-    # "enmo_diff_pct",
+    "anglez_diff_pct",
+    "enmo_diff_pct",
 ]
 
 # Original Data
@@ -85,6 +85,8 @@ def add_feature(series_df: pl.DataFrame) -> pl.DataFrame:
             pl.col('anglez_rad').cos().alias('anglez_cos'),
             anglez_diff=pl.col('anglez').diff(),
             enmo_diff=pl.col('enmo').diff(),
+            anglez_diff_pct=pl.col('anglez').diff(),
+            enmo_diff_pct=pl.col('enmo').diff(),
             # pl.col('anglez_diff').fill_null(strategy="zero"),
             # pl.col('enmo_diff').fill_null(strategy="zero"),
         )
@@ -93,7 +95,9 @@ def add_feature(series_df: pl.DataFrame) -> pl.DataFrame:
     
     series_df = series_df.with_columns(
         pl.col('anglez_diff').fill_null(strategy="zero"),
-        pl.col('enmo_diff').fill_null(strategy="zero")
+        pl.col('enmo_diff').fill_null(strategy="zero"),
+        pl.col('anglez_diff_pct').fill_null(strategy="zero"),
+        pl.col('enmo_diff_pct').fill_null(strategy="zero")
     )
 
     return series_df
