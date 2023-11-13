@@ -15,7 +15,7 @@ defaults:
   - model: Spec2DCNN
   - feature_extractor: CNNSpectrogram
   - decoder: UNet1DDecoder
-  - split: fold_3
+  - split: fold_0
 
 seed: 42
 exp_name: dummy
@@ -24,7 +24,7 @@ downsample_rate: 2
 upsample_rate: 1
 
 trainer:
-  epochs: 60
+  epochs: 50
   accelerator: auto
   use_amp: true
   debug: false
@@ -73,8 +73,8 @@ features:
   # - "anglez_cos"
   - "anglez_diff"
   - "enmo_diff"
-  # - "anglez_diff_pct"
-  # - "enmo_diff_pct"
+  - "anglez_diff_pct"
+  - "enmo_diff_pct"
 
 # optimizer
 optimizer:

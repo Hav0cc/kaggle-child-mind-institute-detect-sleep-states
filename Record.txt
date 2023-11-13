@@ -8,4 +8,5 @@ exp007:On Cleaned_Data_V2_1 with its average and duration=2880 resnet50 0.654
 exp008:On Cleaned_Data_V2 with its average duration=2880, max valid_score xxx
 exp009/010:Same as exp001, add 2 features enmo_diff and anglez_diff 0.716
 exp011: add 2 features enmo_diff_pct 0.701
-exp012: same as exp 001 resnet50 fold0
+exp012: same as exp 001 resnet50 fold0 0.717
+exp014: resnet34 4 features fold0
