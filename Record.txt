@@ -10,3 +10,4 @@ exp009/010:Same as exp001, add 2 features enmo_diff and anglez_diff 0.716
 exp011: add 2 features enmo_diff_pct 0.701
 exp012: same as exp 001 resnet50 fold0 0.717
 exp014: resnet34 4 features fold0
+exp014: resnet50 4 features fold0
